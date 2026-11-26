@@ -1,19 +1,27 @@
-# Malpraktis Emsal Araştırması
+# Malpraktis Emsal Kararları için Agent Skill
 
-Türkiye’de tıbbi malpraktis ve hekim sorumluluğu uyuşmazlıklarında emsal karar bulmak, kararları somut olayla karşılaştırmak ve atıfları kontrol etmek için bir Codex becerisi. Aydınlatılmış onam, tıbbi kusur, komplikasyon, bilirkişi incelemesi, tazminat ve yargı yolu gibi konuları kapsar.
+Türkiye’de tıbbi malpraktis ve hekim sorumluluğu uyuşmazlıklarında emsal karar bulmak, kararları somut olayla karşılaştırmak ve atıfları kontrol etmek için Claude Code ve Codex’te kullanılabilen bir beceri. Aydınlatılmış onam, tıbbi kusur, komplikasyon, bilirkişi incelemesi, tazminat ve yargı yolu gibi konuları kapsar.
 
 ## Kurulum ve kullanım
 
 ```sh
-git clone https://github.com/hasanimer/malpraktis-emsal-arastirmasi.git
+git clone https://github.com/hasanimer/malpraktis-emsal-kararlar-skill.git malpraktis-emsal-arastirmasi
 ```
 
-Klonlanan `malpraktis-emsal-arastirmasi` klasörünü `$CODEX_HOME/skills` altına taşıyın. `CODEX_HOME` tanımlı değilse varsayılan dizin `~/.codex/skills` olur. Yeni bir Codex sohbetinde beceriyi `$malpraktis-emsal-arastirmasi` ile çağırın.
+Klonlanan `malpraktis-emsal-arastirmasi` klasörünü kullandığınız aracın kişisel beceri dizinine taşıyın. Yeni bir oturumda beceriyi tablodaki adla çağırın.
+
+| Araç | Kişisel beceri dizini | Çağırma |
+| --- | --- | --- |
+| Claude Code | `~/.claude/skills/` | `/malpraktis-emsal-arastirmasi` |
+| Codex | `$CODEX_HOME/skills/` veya `~/.codex/skills/` | `$malpraktis-emsal-arastirmasi` |
+
+Claude Code’da beceriyi bir projeyle paylaşmak için klasörü o projenin `.claude/skills/` dizinine de ekleyebilirsiniz. [Claude Code beceri belgeleri](https://code.claude.com/docs/en/skills)
+
+Örnek araştırma isteği
 
 ```text
-$malpraktis-emsal-arastirmasi ile özel hastanede aydınlatılmış onamın
-kapsamına ilişkin emsalleri bul. İlgili gerekçeyi, PDF sayfasını ve
-karar künyesinin doğrulama durumunu göster.
+Özel hastanede aydınlatılmış onamın kapsamına ilişkin emsalleri bul.
+İlgili gerekçeyi, PDF sayfasını ve karar künyesinin doğrulama durumunu göster.
 ```
 
 Yerel derlemede arama için bir MCP bağlantısı gerekmez. LegalUga MCP bağlıysa beceri ek karar aramak ve bulunan künyeleri ve alıntıları kontrol etmek için onu da kullanır.
