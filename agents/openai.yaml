@@ -1,0 +1,4 @@
+interface:
+  display_name: "Malpraktis Emsal Araştırması"
+  short_description: "Malpraktis içtihadını bul ve atıfları doğrula"
+  default_prompt: "$malpraktis-emsal-arastirmasi ile aydınlatılmış onama ilişkin emsalleri bul ve karar atıflarını kontrol et."
